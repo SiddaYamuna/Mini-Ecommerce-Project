@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .row-bg-color {
+            background-color: rgb(247, 246, 246);
+        }
+
+        .font-size {
+            font-size: 11px;
+        }
+
+        .description-fontsize {
+            font-size: 9px;
+        }
+
+        .quantity-fontsize {
+            font-size: 12px;
+        }
+
+        .money-color-fontsize {
+            color: blue;
+            font-size: 14px;
+
+        }
+.money-fontsize {
+            font-size: 14px;
+
+        }
+
+
+        .img-border {
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+
+        .wid {
+            height: 140px;
+            width: 200px;
+
+        }
+
+        .card-border-radius {
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- navbar  -->
+    <div class="container-fluid px-0">
+        <div class="navbar navbar-dark navbar-expand-md row-bg-color">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center gap-3 ms-md-3 ms-md-5" href="#">
+                    <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200/NI_CATALOG/IMAGES/CIW/2025/12/5/13a82fb6-aac6-4a94-af24-3a9522876d76_a27e7cc7-8e5f-4264-b978-c51531625dde"
+                        width="40" class="rounded-pill text-light">
+                    <span class="fw-bold text-dark fs-3">Fresh Fruits</span>
+                </a>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                
+               <div class="position-relative me-5" onclick="openCart()" style="cursor:pointer;">
+
+                    <i class="bi bi-cart3 fs-3 text-dark"></i>
+                    <span id="cartCount"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row vh-100 d-flex">
+
+            <!-- Sidebar -->
+            <div class="col-auto row-bg-color h-100 m-1 rounded">
+                <!-- sidebar content -->
+                <a href="#seasonal-fruits" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/8/25/a28ef87c-6fa8-4df0-848c-f69472de6b8e_fd3c5a75-8ae2-4f7e-b3dc-7f96a4caf4b4" width="50" class="img-border p-1"
+                            alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Fruits</div>
+                </a>
+
+                <a href="#seasonal-fruits" class="text-decoration-none text-dark ">
+                    <div class="d-flex justify-content-center mt-2"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/12/5/c4fddc77-f407-4a03-a598-13df6178c402_050b74b6-7c2d-48dd-ae57-b084748cea25" width="50" class="img-border p-1"
+                            alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Seasonal Fruits</div>
+                </a>
+
+                <a href="#exotic-fruits" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/8/25/a33815ee-81be-4312-8567-b2162230962d_0e50f0b8-1bc5-4778-98e7-8c4ff1f01988" width="50" class="img-border p-1"
+                            alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Exotic Fruits</div>
+                </a>
+
+                <a href="#frozen-fruits" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/3/19/1a650bf3-bd22-49c9-a77f-e23ba0b598b5_b22f5453-8374-40f6-840a-2ba00b46e881" width="50" class="img-border p-1"
+                            alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Frozen Fruits</div>
+                </a>
+            </div>
+
+            <!-- Cards Column -->
+            <div class="col row-bg-color h-100 overflow-auto mt-1 ps-0 pe-0">
+
+                <div class="d-flex flex-wrap">
+                    <!--Seasonal Fruits -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="seasonal-fruits">
+                        Seasonal Fruits
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/11/20/61b52936-0f6d-47d3-a0bb-0f92677feb99_YD435JLGGZ_MN_20112025.jpg" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Black Grapes Sharad (Seedless)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Mild Sweet-tart grapes with crunchy texture</p>
+                            <p class="quantity-fontsize">200g<br><span class="money-color-fontsize">₹74</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/30/4a6dd92a-4981-4a8d-a69f-b985e427f1da_240205_MN.jpg" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Green Grapes Sonaka (Seedless)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Crisp with mild sweetness & tangy finish
+                            </p>
+                            <p class="quantity-fontsize">200g<br><span class="money-color-fontsize">₹75</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/2/cb66dabc-6892-4425-b086-900b5043a450_2168_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Premium Kinnow Orange (Narinja pandu)
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Rich sweet-tangy flavour</p>
+                            <p class="quantity-fontsize">3 pieces<br><span class="money-color-fontsize">₹71</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/9d1e22e5-fb98-4be1-8b68-12902e73684e_7R2FK064US_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Imported Blueberry (From Peru)
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Firm, crisp grapes with sweet, mildly tart flavor</p>
+                            <p class="quantity-fontsize">1 regular<br><span class="money-color-fontsize">₹71</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/24/245d2d53-4eb5-4278-8a3f-4ab9aff85285_306059_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Indian Crimson Grapes (Seedless)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet-tart flavour with a crisp snap</p>
+                            <p class="quantity-fontsize">200g<br><span class="money-color-fontsize">₹53</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/13/42bb4165-124b-46fa-a883-342746e02fa7_505307_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Daily Kinnow Orange (Narinja pandu)
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Refreshing sweet-tart flavour, with thick skin </p>
+                            <p class="quantity-fontsize">550g<br><span class="money-color-fontsize">₹71</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/21/3a6321d7-8ce4-4aac-a3a6-04168268b6a3_6494_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Black & Green Grapes Mix Pack</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Try Black Sharad and Green Sonaka mix pack </p>
+                            <p class="quantity-fontsize">400g <br><span class="money-color-fontsize">₹99</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/10/21/dba4cc04-4280-4266-b87e-e2b3aa386a51_2613_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Mahabaleshwar Strawberry</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">The Perfect Sweet-Tart Balance</p>
+                            <p class="quantity-fontsize">165g<br><span class="money-color-fontsize">₹85</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/ea62ffc5-3a34-4597-bd39-048a4b3c8bd4_9UAU31CRWN_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Apple Ber (Apple)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Crisp, tart fruit perfect for snacking or salads.</p>
+                            <p class="quantity-fontsize">550g<br><span class="money-color-fontsize">₹50</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Exotic Fruits -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="exotic-fruits">
+                        Exotic Fruits
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/9d1e22e5-fb98-4be1-8b68-12902e73684e_7R2FK064US_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Imported Blueberry (From Peru)
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet-tart flavour with a crisp snap </p>
+                            <p class="quantity-fontsize"> 1 regular<br><span class="money-color-fontsize">₹208</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/4f982dd9-4aab-44b2-ae16-d3100ee556bf_05XHTCL7RB_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Imported Litchi (Longan)
+                                </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet, juicy fruit similar to lychee</p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹63</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                     <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/14/17d48a19-e807-49cf-a205-e31f2512decf_6483_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Mandarin Orange
+                                </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet, tangy citrus for fresh eating or juice.</p>
+                            <p class="quantity-fontsize">3 pieces<br><span class="money-color-fontsize">₹104</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/2f7575d9-5fed-4048-b0c6-de31b8f95aa9_TMRWTFQ28Z_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">White Flesh Dragon Fruit Imported</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">
+                                Mildly sweet, exotic superfood with nutrients</p>
+                            <p class="quantity-fontsize">1 piece <br><span class="money-color-fontsize">₹124</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/c736350b-c6b5-429c-8849-3a5645622470_JQ5BJYUOLA_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Indian Avocado</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Creamy & heart-healthy-perfect for toast & dips</p>
+                            <p class="quantity-fontsize">1 piece <br><span class="money-color-fontsize">₹101</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/26d7a8eb-a442-4a0c-9d44-2711cb51a0d7_HR76I7ICB7_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Kimia Dates
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet, chewy dates perfect for desserts.</p>
+                            <p class="quantity-fontsize">1 pack<br><span class="money-color-fontsize">₹192</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/37eab284-fd0d-479a-ae65-9a9d78ab3413_SPTUC142PW_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Daily Apple (Apil)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Everyday sweet, crisp, and juicy with a balanced flavor </p>
+                            <p class="quantity-fontsize"> 2 pieces<br><span class="money-color-fontsize">₹68</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/24/245d2d53-4eb5-4278-8a3f-4ab9aff85285_306059_1.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Indian Crimson Grapes (Seedless)</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Firm, crisp grapes with sweet, mildly tart flavor</p>
+                            <p class="quantity-fontsize">200g<br><span class="money-color-fontsize">₹53</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/5badb460-9b0d-4fda-8815-2cb6f81f81a3_IN6ZKJ8V3J_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Imported Plum</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Juicy, pulpy and tarty</p>
+                            <p class="quantity-fontsize">250g<br><span class="money-color-fontsize">₹125</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/47b0ebf9-de27-4970-874d-185d17d5966b_G5AWZNYQON_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Valencia Orange</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Bright, rich flavor, high in vitamin C.</p>
+                            <p class="quantity-fontsize">2 pieces<br><span class="money-color-fontsize">₹100</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/11/20/a639d165-55b1-4bfc-b8db-23378d3f9142_2J8P7YF6MN_MN_20112025.jpg" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sweet Tamarind</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Naturally sweet, boosts digestion, and supports immunity.</p>
+                            <p class="quantity-fontsize">200g<br><span class="money-color-fontsize">₹145</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+                     <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/19/6d34bd05-ec1e-4b4e-a644-9770b141a86c_VODG6HASR0_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Kiwi Green</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Soft, seedy center with sweet-sour freshness</p>
+                            <p class="quantity-fontsize">3 pieces<br><span class="money-color-fontsize">₹142</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>
+                        </div>
+                    </div>
+
+<!-- Frozen Fruits -->
+
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="frozen-fruits">
+                        Frozen Fruits
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/c7bbd1d5-53cc-49f2-9e9d-00e80e23e9ee_NKKS5HX206_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Frozen Tender Coconut Pulp</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">iD Fresh Freshly </p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹249</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/ddd8a15e-15ce-469e-9a75-d0e8d2ca3d65_H6GR1UXJCA_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Frozen Mango Pulp
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">iD Fresh Freshly </p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹249</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/0e59424c-072c-436f-aa23-2c379a413747_DIDRWZ4R9W_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Godrej Yummiez American Sweet Corn</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet Corn Delight</p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹100</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/ebb4ade5-8c2b-4e21-bae0-38ce9c527ffb_27TWTI3ITV_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Godrej Yummiez Green Peas</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Garden-fresh peas anytime
+                            </p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹80</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/08ea724c22e608d3e7d1d7d9d64c702f" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">SPT Frozen Green Peas
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Garden-fresh peas</p>
+                            <p class="quantity-fontsize"> <br><span class="money-color-fontsize">₹149</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/ciw/2025/12/18/ebb4ade5-8c2b-4e21-bae0-38ce9c527ffb_27TWTI3ITV_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Godrej Yummiez Green Peass</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Frozen green peas for cooking convenience</p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹154</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/27aba13c-e2f5-49e4-99fb-6584c4e8fa3b_GKOSNMLLFK_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Safal Frozen Green Peas</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Farm Fresh Green Peas </p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹119</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/d9951473-5b18-4133-940b-fa406123bcc8_H5GUDXHCDF_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">SPT Frozen Sweet Corn</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet ready kernels</p>
+                            <p class="quantity-fontsize"> <br><span class="money-color-fontsize">₹148</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span>
+                            </p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 15rem;">
+                        <div class="d-flex justify-content-center p-1"><img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f1f3c98d-8641-46ca-b6fe-2e31767a93b1_12LD7329RL_MN_18122025.png" class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Safal Frozen Sweet Corn</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet quick-cook kernels </p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹180</span><span class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹</span></p>
+<a href="javascript:void(0)"
+   class="btn btn-success btn-sm d-flex justify-content-center add-to-cart">
+  Add to Cart
+</a>                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <script>
+  let cart = [];
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("add-to-cart")) return;
+
+    const card = e.target.closest(".card");
+    const name = card.querySelector("h5").innerText.trim();
+    const priceText = card.querySelector(".money-color-fontsize").innerText;
+    const price = Number(priceText.replace("₹", ""));
+
+    addToCart(name, price);
+  });
+
+  function addToCart(name, price) {
+    const item = cart.find(p => p.name === name);
+
+    if (item) {
+      item.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    document.getElementById("cartCount").innerText =
+      cart.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  function openCart() {
+    renderCart();
+    new bootstrap.Modal(document.getElementById("cartModal")).show();
+  }
+
+  function renderCart() {
+    let html = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+
+      html += `
+        <div class="d-flex justify-content-between align-items-center mb-2 border-bottom pb-2">
+          <div>
+            <strong>${item.name}</strong><br>
+            ₹${item.price}
+          </div>
+
+          <div>
+            <button class="btn btn-sm btn-outline-secondary" onclick="qty(${index},-1)">-</button>
+            ${item.quantity}
+            <button class="btn btn-sm btn-outline-secondary" onclick="qty(${index},1)">+</button>
+          </div>
+
+          <div>₹${item.price * item.quantity}</div>
+        </div>
+      `;
+    });
+
+    document.getElementById("cartItems").innerHTML =
+      html || "<p>Your cart is empty</p>";
+
+    document.getElementById("cartTotal").innerText = total;
+  }
+
+  function qty(index, val) {
+    cart[index].quantity += val;
+    if (cart[index].quantity <= 0) cart.splice(index, 1);
+    updateCartCount();
+    renderCart();
+  }
+</script>
+
+
+
+
+
+
+                    
+<div class="modal fade" id="cartModal" tabindex="-1">
+  <div class="modal-dialog modal-md modal-dialog-end">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">My Cart</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body" id="cartItems">
+        <p>Your cart is empty</p>
+      </div>
+
+      <div class="modal-footer">
+        <h5>Total: ₹<span id="cartTotal">0</span></h5>
+        <button class="btn btn-success">Checkout</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
+

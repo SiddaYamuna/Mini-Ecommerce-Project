@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signup Page</title>
+  <link href="bootstrap.css" rel="stylesheet">
+  <style>
+    .left-image {
+      background: url("foods.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+       min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!--Left side-->
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-none d-md-block d-lg-block left-image"></div>
+
+      <!--Right Side-->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+        <div class="w-75 text-center">
+
+          <h2>Welcome to Indian Feast</h2>
+          <p>Please sign in to access your dashboard</p>
+
+          <form action="signup.php" method="post" class="text-start">
+
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3">
+              Sign up
+            </button>
+
+            <div class="text-center">
+              Already have an account?
+              <a href="login.html">Login here</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

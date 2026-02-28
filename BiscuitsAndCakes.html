@@ -1,0 +1,1138 @@
+<!-- Biscuits and cakes -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .row-bg-color {
+            background-color: rgb(247, 246, 246);
+        }
+
+        .font-size {
+            font-size: 11px;
+        }
+
+        .description-fontsize {
+            font-size: 9px;
+        }
+
+        .quantity-fontsize {
+            font-size: 12px;
+        }
+
+        .money-color-fontsize {
+            color: blue;
+            font-size: 14px;
+
+        }
+
+
+        .img-border {
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+
+         .wid {
+            height: 100px;
+            width: 130px;
+
+        }
+
+        .card-border-radius {
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- navbar  -->
+    <div class="container-fluid px-0">
+        <div class="navbar navbar-dark navbar-expand-md row-bg-color">
+            <div class="container-fluid">
+                 <a href="home.php"><i class="bi bi-house-door-fill fs-2 ps-3 text-dark"></i></a>
+                <a class="navbar-brand d-flex align-items-center gap-3 ms-md-3 ms-md-5" href="#">
+                    <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200/NI_CATALOG/IMAGES/CIW/2025/10/8/baa03922-9920-4588-b397-a5faad7f4ff5_b2be157f-a054-402a-b5e6-dbb8eff8ae4a"
+                        width="40" class="rounded-pill text-light">
+                    <span class="fw-bold text-dark fs-3">Biscuits and Cakes</span>
+                </a>
+
+                <form class="d-flex pe-4" role="search" onsubmit="return filterProducts()">
+                    <input type="search" class="form-control me-3" id="searchInput" placeholder="Search products" />
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+
+        <div class="row vh-100 d-flex">
+
+            <!-- Sidebar -->
+            <div class="col-auto row-bg-color h-100 m-1 rounded">
+                <!-- sidebar content -->
+                <a href="#cookies" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/27/f52de753-261f-496c-ab2f-49ee5437e3b2_737_1.png"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Cookies</div>
+                </a>
+
+                <a href="#cream-biscuits" class="text-decoration-none text-dark ">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/22/bfa3d7c6-d620-47a0-a2ab-59bc6c262159_73899_1.png"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Cream Biscuits</div>
+                </a>
+
+                <a href="#salted&plain" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/cd449a5f-cffd-42b0-acca-ec87881ef76a_IV48FFMPYP_MN_17122025.png"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Salted & Plain</div>
+                </a>
+
+                <a href="#cakes" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/12/13/ab486ce8-513c-426f-bd6c-051efb2458a4_b506c5a4-3db4-4f33-b610-d10802a721b4.png"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Cakes</div>
+                </a>
+
+
+
+            </div>
+
+            <!-- Cards Column -->
+            <div class="col row-bg-color h-100 overflow-auto mt-1 ps-0 pe-0">
+
+                <div class="d-flex flex-wrap gap-1">
+                    <!--Cookies -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="cookies">
+                        Cookies
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/4bf68a0e-8cd0-4cab-8663-524823b1f417_7P9W21ISIN_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Good Day Chunkies</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocolate Chip
+                                Cookies</p>
+                            <p class="quantity-fontsize">75g<br><span class="money-color-fontsize">₹35</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹40</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/096529a5-8e56-4916-8684-00a2f9dd561d_4BJHX3ORQ1_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Hide & Seek Milano Cookies</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Soft & Crunchy
+                                Chocolate Cookies
+                            </p>
+                            <p class="quantity-fontsize">120g<br><span class="money-color-fontsize">₹102</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹108</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/11/14/77023a2b-26c9-4826-ad1c-7c576078ae3b_406819_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Lotus Biscoff Original Caramelized
+                                Cookie Family Pack
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Original
+                                Caramelized Cookies</p>
+                            <p class="quantity-fontsize">225g<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹110</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/ciw/2025/12/18/e911bbb1-2a0a-49be-99ee-c54e5d85e546_7VBTA5BFNA_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Cookie Man Almond Biscotti Cookies
+                                Biscuits
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Almond Biscotti
+                                Cookies</p>
+                            <p class="quantity-fontsize">150mg <br><span class="money-color-fontsize">₹220</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹240</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/20/5e23b21d-d98d-4f62-85e3-c27b45ad81c2_90_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Little Hearts Classic Crunch
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Classic
+                                sugar-dusted crunchy biscuits</p>
+                            <p class="quantity-fontsize">79g<br><span class="money-color-fontsize">₹25</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹30</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/9/d6f90dc1-ea2d-4b87-9524-6612b2fab82a_192_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Hide & Seek Parle Chocolate Chip
+                                Cookies</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocochip
+                                cookie crunch </p>
+                            <p class="quantity-fontsize">115.5g<br><span class="money-color-fontsize">₹20</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹25</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/ciw/2025/12/18/5f7fa684-68f5-4aa2-8eb6-8750908b0075_DIMGDG59TA_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Milano Choco Chip Cookies</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Premium cookies
+                                with rich chocolate chips</p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹62</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹65</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/9f777dd1-721e-423f-b352-e4a5dd23a1af_P1YWF6B5D9_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Cadbury Chocobakes Choco Chip Cookies
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocolatey
+                                Crunch, Classic Cookies</p>
+                            <p class="quantity-fontsize">167g<br><span class="money-color-fontsize">₹65</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹70</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/13738371-e21c-423c-bcbd-ca9822b6dfef_BKUKX4DMDN_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Hide & Seek Cafe Mocha Cookies
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocolate chip
+                                cookies with a cafe mocha twist</p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹23</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹25</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Cream Biscuits -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="cream-biscuits">
+                        Cream biscuits
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/2f0c3c24-c964-4e72-bd05-1ded926045c5_2ZLN7LQX4O_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Dark Fantasy Bourbon Classic
+                                Biscuit Made With real Chocolate
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">chocolate
+                                cream-filled sandwich biscuits</p>
+                            <p class="quantity-fontsize">108g<br><span class="money-color-fontsize">₹26</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹30</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/16/be9eedd9-73b8-4659-937a-48c32ea7406d_16438_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Cadbury Oreo Vanilla Flavour Crème
+                                Sandwich Biscuit
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Perfect snack
+                                with a sweet vanilla twist</p>
+                            <p class="quantity-fontsize">41.75g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/52f41abe-497e-4140-8f23-324505d8438c_DGF7LPLY16_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Bounce Cream Tangy Orange</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sunfeast Bounce
+                                Cream Tangy</p>
+                            <p class="quantity-fontsize">58g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/22/cc26ca55-d7cf-4c3d-ba20-551394f64126_1703_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Jim Jam Biscuits-The OG
+                                biscuit with Vanilla Creme & Jammy Center</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Jammie creamy
+                                bites
+                            </p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹23</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹25</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/469f202c-7e01-4c24-b9cf-fbb3b451405c_GPZIYULFXQ_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Snackible Dipsters - Biscuit Sticks
+                                With Vanilla Dip </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Crispy wheat
+                                biscuit sticks + creamy jaggery dip</p>
+                            <p class="quantity-fontsize">30g<br><span class="money-color-fontsize">₹32</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/16/ac2e8797-57d3-4eb9-abe7-a18cf5b3771b_2314_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Cadbury Oreo Strawberry Flavour Crème
+                                Sandwich Biscuit
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">
+                                Strawberry-flavored twist on classic Oreo</p>
+                            <p class="quantity-fontsize">41.75<br><span class="money-color-fontsize">₹8</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/7d5c602a-36ee-4480-a75c-870945e64676_7Z66YMCLXN_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Milk Bikis Sandwich Biscuits
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Milk Bikis
+                                Sandwich Biscuits </p>
+                            <p class="quantity-fontsize">188g<br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/90d3ba5d-840e-4434-941b-443a9f2a562c_E2ZNDNUI5F_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia The Original Bourbon - Creme
+                                Biscuit with Chocolate </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Iconic
+                                chocolate sandwich</p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹18</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹20</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/27/f52de753-261f-496c-ab2f-49ee5437e3b2_737_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Dark Fantasy Choco Fills
+                                Cookies</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Gooey choco
+                                centers</p>
+                            <p class="quantity-fontsize">69g<br><span class="money-color-fontsize">₹32</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Saled & Plain Biscuits -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="salted&plain">
+                        Salted & Plain Biscuits
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/006e6414-ba52-4345-ba83-441b2086a887_7ERPJ1RHWT_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Monaco Crispy Light Salty Snack
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Crispy, salty
+                                biscuit for everyday snacking</p>
+                            <p class="quantity-fontsize"> 185.6g<br><span class="money-color-fontsize">₹32</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/d831d69d-e76c-46be-a743-aabd6a1a88dc_OYR8Z5OQ9T_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Monaco Classic Salty Biscuits
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Salty and
+                                crispy round biscuits </p>
+                            <p class="quantity-fontsize">371.2g<br><span class="money-color-fontsize">₹66</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹70</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/cd449a5f-cffd-42b0-acca-ec87881ef76a_IV48FFMPYP_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia 50 50 Maska Chaska Biscuits
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Butter-flavored
+                                snack</p>
+                            <p class="quantity-fontsize">300g<br><span class="money-color-fontsize">₹84</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹90</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/403e1e43-b798-4063-85da-aa44a3325956_7GCL9CKYG8_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Krack Jack Sweet & Salty Crackers
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Classic sweet
+                                and salty tea biscuits
+                            </p>
+                            <p class="quantity-fontsize">176.4g<br><span class="money-color-fontsize">₹32</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/7c0d955f-9b3f-4a8d-9d88-9ebe39d85926_IEMCM5P3YK_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Nice Time Sugar Showered
+                                Coconut Biscuits</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sugar-dusted
+                                coconut biscuits with a crunch</p>
+                            <p class="quantity-fontsize">152g<br><span class="money-color-fontsize">₹23</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹25</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f54dd5b3-4567-42f2-8978-0c983b70f15e_V2RMXJKYKI_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Nice
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">
+                                Coconut-flavored sugary biscuits</p>
+                            <p class="quantity-fontsize">64g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f7221a27-c8dd-4281-8046-a8f746a4a337_P7K39U3YI8_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle G Glucose</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Classic energy
+                                biscuits</p>
+                            <p class="quantity-fontsize">250g<br><span class="money-color-fontsize">₹24</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹26</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/d9c134c9-4005-4de5-8ca2-3f9910a24e18_PY9QMI86KG_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Good Day Butter Jeera Cookies
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Zero trans fat,
+                                baked to perfection</p>
+                            <p class="quantity-fontsize">450g<br><span class="money-color-fontsize">₹95</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹100</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/c2e6ec0d-75bf-4985-af79-7a6ce190fd18_OVGDUAIX92_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Marie Gold Biscuits</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Light and crisp
+                                tea-time digestive biscuits</p>
+                            <p class="quantity-fontsize">250g<br><span class="money-color-fontsize">₹38</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹40</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/0343ac91-6af9-4bdb-8e53-ea230dc45b86_B8KAQQV7F6_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Biscuits Vita Marie Gold Chai
+                                Time</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Light digestive
+                                biscuits with vitamins</p>
+                            <p class="quantity-fontsize">900g<br><span class="money-color-fontsize">₹130</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹140</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Cakes -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="cakes">
+                        Cakes
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/9/6cc47038-8d75-4226-ab19-7d15f3c2f139_NPI-062684_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Dark Fantasy Swiss Roll
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1"> Dark Fantasy
+                                Swiss Roll</p>
+                            <p class="quantity-fontsize"> 21.6 g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/17/1a827b21-e3fd-43ae-9b9e-abbc7e15d93b_840956_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Cadbury Brownie
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sweet and
+                                Chocolatey</p>
+                            <p class="quantity-fontsize">38 g<br><span class="money-color-fontsize">₹28</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹30</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/603b6509-c766-4282-b964-d75ec839da5d_NA4T3OZRPZ_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Gobbles Bar Cake Fruity Fun
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Tasty and
+                                healthy</p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹23</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹25</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/20/43a1d94a-0d52-435a-a65a-f0aef509eb60_19893_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Gobbles Bar Cake Choco Chill
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">More Chocolatey
+                            </p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹25</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹27</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/6f186879-ad6a-467c-92e6-27281e4bb784_MI0BFJOX8N_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Dark Fantasy Caker Sliced
+                                Chocolate Cake
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Sliced
+                                Chocolate Cake</p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹32</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹40</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/2bcd1e0a-088e-41fa-a6ee-bf26173b410e_2FFZO3YC6K_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Happy Happy Cakes Vanilla
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Vanilla Masti
+                            </p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹28</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/ebf2b0aa-fb37-4659-8d4c-b0959131a334_UZ8V5A7PDG_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Fudge It Chocolate Brownie
+                                Cake</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocolate
+                                Brownie Cake </p>
+                            <p class="quantity-fontsize">120 g<br><span class="money-color-fontsize">₹75</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹80</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/20/43a1d94a-0d52-435a-a65a-f0aef509eb60_19893_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Gobbles Marble Cake Choco
+                                Vanilla
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Choco Vanilla
+                                Cake</p>
+                            <p class="quantity-fontsize">122g<br><span class="money-color-fontsize">₹22</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹27</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/23/671bf56b-c4de-4cc2-9bcb-9b83cb71a7d9_17208_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Treat Croissant Cocoa Creme
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Cocoa Creme</p>
+                            <p class="quantity-fontsize">48.5 g<br><span class="money-color-fontsize">₹18</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹20</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/24/f8c1763a-d4b5-4464-ab44-28023cb296e5_674639_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Elite Choco Brownie
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Chocolatey</p>
+                            <p class="quantity-fontsize"> 190 g<br><span class="money-color-fontsize">₹72</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹75</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/fd625a1e-87d2-47ef-aeae-a8cd9eacf836_NQCL54SR08_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Elite Butter Cup Cake
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">short and round
+                            </p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹52</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹55</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/11/23/11e3c249-883e-412f-99e0-5f068832cd64_1.Composite.jpg"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">The Baker's Dozen Zero Maida Banana
+                                Bread</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Made with 20%
+                                Bananas, 100% wholewheat</p>
+                            <p class="quantity-fontsize">150 g<br><span class="money-color-fontsize">₹85</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹90</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/e3c81f56-96fc-40cc-a7fb-c59c5d61ef70_X72A1ZB4QU_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Parle Happy Happy Cakes Orange</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Zesty soft
+                                bites
+                            </p>
+                            <p class="quantity-fontsize">100 g<br><span class="money-color-fontsize">₹33</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹35</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/23/fd3ac511-42e6-4940-8880-2f8059487f5f_82754_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Elite Banana Pudding Cake</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Moist banana
+                                cake with pudding texture
+                            </p>
+                            <p class="quantity-fontsize">140 g<br><span class="money-color-fontsize">₹48</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹53</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/0982a333-10a3-4c09-9c27-88a76f4c5197_E7JNXA7NQA_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">The Baker's Dozen Zero Maida Love Cake
+                                - Vanilla
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Zero Maida Love
+                                Cake - Vanilla</p>
+                            <p class="quantity-fontsize">40 g<br><span class="money-color-fontsize">₹23</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹30</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/20/18c0513e-c276-4127-968e-1a79a608c968_21177_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Britannia Gobbles Marble Red Velvet
+                                Cake</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1"> Soft cake with
+                                marble swirl and red velvet flavor
+                            </p>
+                            <p class="quantity-fontsize">122 g<br><span class="money-color-fontsize">₹22</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹27</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/a818647f-cb25-4298-9696-a79629f8ee49_A349GQET4N_MN_17122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">The Baker's Dozen Zero Maida Love Cake
+                                - Chocolate</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Zero Maida Love
+                                Cake - Chocolate</p>
+                            <p class="quantity-fontsize">40 g<br><span class="money-color-fontsize">₹22</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹30</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <script src="cart.js"></script>
+
+</body>
+
+</html>

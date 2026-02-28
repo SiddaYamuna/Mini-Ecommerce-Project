@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .row-bg-color {
+            background-color: rgb(247, 246, 246);
+        }
+
+        .font-size {
+            font-size: 11px;
+        }
+
+        .description-fontsize {
+            font-size: 9px;
+        }
+
+        .quantity-fontsize {
+            font-size: 12px;
+        }
+
+        .money-color-fontsize {
+            color: blue;
+            font-size: 14px;
+
+        }
+
+
+        .img-border {
+            border: 1px solid grey;
+            border-radius: 8px;
+        }
+
+        .wid {
+            height: 100px;
+            width: 130px;
+
+        }
+
+        .card-border-radius {
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- navbar  -->
+    <div class="container-fluid px-0">
+        <div class="navbar navbar-dark navbar-expand-md row-bg-color">
+            <div class="container-fluid">
+                 <a href="home.php"><i class="bi bi-house-door-fill fs-2 ps-3 text-dark"></i></a>
+                <a class="navbar-brand d-flex align-items-center gap-3 ms-md-3 ms-md-5" href="#">
+                    <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200/NI_CATALOG/IMAGES/CIW/2025/10/8/6a51d704-b2cc-4787-aced-162fae80a0ce_042fb322-f6db-412d-ba43-f83d090aa463"
+                        width="40" class="rounded-pill text-light">
+                    <span class="fw-bold text-dark fs-3">Noodles, Pasta and Vermicelli</span>
+                </a>
+                <form class="d-flex pe-4" role="search" onsubmit="return filterProducts()">
+                    <input type="search" class="form-control me-3" id="searchInput" placeholder="Search products" />
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+
+        <div class="row vh-100 d-flex">
+
+            <!-- Sidebar -->
+            <div class="col-auto row-bg-color h-100 m-1 rounded">
+                <!-- sidebar content -->
+                <a href="#noodles" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2025/6/6/aea06f0d-eb65-43ab-9dcd-f7ea7ef9b8ac_97e68bb0-38ae-4a68-a77a-514d15373228"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Noodles</div>
+                </a>
+
+                <a href="#pasta" class="text-decoration-none text-dark ">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2024/10/12/ad608993-a46a-4b75-a099-d0bf06d0736f_f4952c8a-1a7a-4e30-b79f-6a82148ec364"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Pasta</div>
+                </a>
+
+                <a href="#vermicelli" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2024/10/12/29a297fa-b7ff-48dc-be17-0886dbfb6ad9_fdeb96c0-18df-46a8-ad42-7e82ad11976f"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Vermicelli</div>
+                </a>
+
+                <a href="#soups" class="text-decoration-none text-dark">
+                    <div class="d-flex justify-content-center mt-2"><img
+                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96/NI_CATALOG/IMAGES/CIW/2024/10/12/d966813d-fb2f-4f60-8896-a2ca1c303783_415eedbf-b1cf-415f-9491-6388f444bb86"
+                            width="50" class="img-border p-1" alt=""></div>
+                    <div class="d-flex justify-content-center font-size">Soups</div>
+                </a>
+
+            </div>
+
+            <!-- Cards Column -->
+            <div class="col row-bg-color h-100 overflow-auto mt-1 ps-0 pe-0">
+
+                <div class="d-flex flex-wrap">
+                    <!--Noodles -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="noodles">
+                        Noodles
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/72f8334e-4945-47b0-8d74-83e2b56f1859_0XIHZV1QLV_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Yippee Magic Masala Noodles
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Bold masala
+                                slurp</p>
+                            <p class="quantity-fontsize">409g<br><span class="money-color-fontsize">₹85</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹90</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/7/9/2c330a16-c6d3-4c2f-90e0-aebe57481ef9_519140_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">MAGGI Double Masala Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Enjoy your
+                                favourite Masala taste
+                            </p>
+                            <p class="quantity-fontsize">95g<br><span class="money-color-fontsize">₹18</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹20</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/8f9c65dc-c8c9-4791-9318-977c7567d9d5_8473WCE552_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">MAGGI Veg Atta Noodles
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Goodness of Veg
+                                Atta and awesome taste</p>
+                            <p class="quantity-fontsize">290g x 2<br><span class="money-color-fontsize">₹200</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹216</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2024/8/1/9c6495c6-e210-4add-8773-e405456691a8_286220_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast Yippee Korean Noodles Spicy
+                                Kimchi
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Spicy kimchi
+                                Korean noodles</p>
+                            <p class="quantity-fontsize"> 75g x 3<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹107</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/11/4785f6b4-5e4e-4e4e-8f59-82e6493060dd_82_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Maggi Masala Instant Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Enjoy your
+                                favourite Masala taste </p>
+                            <p class="quantity-fontsize">300g x 4<br><span class="money-color-fontsize">₹220</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹225</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/a915a4ed-ce07-4264-8f76-e907cf1fe577_DNGNW7V1JK_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Top Ramen Noodle Magic Masala</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Instant masala
+                                fix </p>
+                            <p class="quantity-fontsize">360g<br><span class="money-color-fontsize">₹65</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹70</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cup Noodles -->
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/1d9b1804-e6a9-4052-ae44-7ece7455dc0d_YCUJZSJGFR_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Zingy Cheese Instant Cup Noodles
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Cheesy tangy
+                                cup</p>
+                            <p class="quantity-fontsize"><br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/61363a1c-4412-4149-8bf1-7747771218cd_RZJSPS57NF_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Chilli Manchurian Noodles Instant
+                                Cup Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">tangy chili
+                                noodles</p>
+                            <p class="quantity-fontsize">80g<br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/cf5658d0-d68a-463d-a619-1d8951f04cf2_KZPBA9J70N_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Cup Noodles Spiced Chicken
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">spicy chicken
+                                cup</p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/1324f1fc-a16d-4e3b-aa62-95583b2e069a_AAYY4LM2UZ_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Cup Noodles Mazedaar Masala</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Zesty masala
+                                cup</p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f037c205-5d05-4d91-82c5-4b7a8923148f_LWBFKQYTGA_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Chilli Chicken Instant Cup Noodles
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Spicy chicken
+                                slurp
+                            </p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹42</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹45</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/52531265-183c-4e94-9746-3fa764aae43c_N1M7HCW0DS_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Cup Noodles Veggi Manchow
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Veggie manchow
+                                cup</p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹48</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/7a142095-2366-45c6-8929-380ae7d9b515_BWLVFAKSO4_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">MAGGI Spicy Garlic Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Instant Cuppa
+                                Noodles</p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹60</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹65</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Korean Noodles -->
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2024/8/1/7ebde5be-5959-4d29-a230-60112e711b2d_751066_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast YiPPee Korean Noodles Spicy
+                                Kimchi</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Spicy kimchi
+                                Korean Noodles</p>
+                            <p class="quantity-fontsize">75g x 3<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹107</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/20/517dc33e-bd52-4ea4-9890-afd5da13761a_520720_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Cheesy Veg Carbonara - Korean Ramen
+                                Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">cheesy
+                                carbonara veg flavor</p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹52</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2024/8/1/9c6495c6-e210-4add-8773-e405456691a8_286220_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Sunfeast YiPPee Korean Noodles Fiery
+                                Hot</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Korean Noodles
+                                Fiery Hot</p>
+                            <p class="quantity-fontsize">75g x 3<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹89</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/20/b14d06cb-bb4a-49ef-bb5c-78cfe8f227e9_669317_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Creamy Hot Sauce - Korean Ramen
+                                Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Creamy spicy
+                                swirl
+                            </p>
+                            <p class="quantity-fontsize">100g<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹69</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/11/28/9d2ec784-6cc9-47b7-a367-e3486f2c73d7_49468_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Geki Hot & Spicy Korean Chicken
+                                Flavour Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Hot & spicy
+                                Korean-style noodles</p>
+                            <p class="quantity-fontsize">80g<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/12/26/696ee882-6c11-4a66-9a6c-5977c41a090d_50583_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Geki Hot & Spicy Korean Instant
+                                Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Instant Noodles
+                                Kimchi Flavor</p>
+                            <p class="quantity-fontsize">80g<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹52</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2024/5/31/ca0c8b19-db81-4142-8b57-9d09f71ab026_instantnoodlesandpasta_FD84GYUTV1_MN.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Korean Red Hot Cheese Instant Cup
+                                Noodles</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1"> Instant Cup
+                                Noodles
+                            </p>
+                            <p class="quantity-fontsize">80g x 3<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹150</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/5dcee761-55eb-4787-b380-dc2e45573b62_PN0AMINV8O_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Nissin Cup Noodles Chilli Chilli Chilli
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Triple chilli
+                                blast</p>
+                            <p class="quantity-fontsize">70g<br><span class="money-color-fontsize">₹</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹50</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Pasta -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="pasta">
+                        Pasta
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/20/7d25b2e9-848e-4838-a14c-90061d3bbaae_718889_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu 100% Whole Wheat Penne Pasta</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Wholesome penne
+                                bites</p>
+                            <p class="quantity-fontsize">500g<br><span class="money-color-fontsize">145</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹150</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/2c405f34-e0a8-40d1-8cb8-fb0712382eb8_6UFW9PHIFA_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Disano Fusilli Pasta 100% Durum Wheat
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Twisty durum
+                                spirals</p>
+                            <p class="quantity-fontsize">500g<br><span class="money-color-fontsize">₹85</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹100</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/2c96d71a-3a53-4488-a4f3-9e13f710b276_00BPLN85L2_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Borges Penne Rigate Durum Wheat Pasta
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Reliable pantry
+                                staple
+                            </p>
+                            <p class="quantity-fontsize">350g<br><span class="money-color-fontsize">₹110</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹120</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/30a3febb-6af7-457f-a652-0564ffdf8b9f_1LR3MINW11_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Keya Fusilli Pasta 100% Durum Wheat
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Springy durum
+                                spirals </p>
+                            <p class="quantity-fontsize"> 400g<br><span class="money-color-fontsize">₹70</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹80</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/9da4f044-eb6f-4b7f-9723-ba87dc476cff_UUPT7PIY9U_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Disano Spaghetti Pasta 100% Durum Wheat
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">healthy pasta
+                                to eat</p>
+                            <p class="quantity-fontsize">500g<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹110</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2025/6/18/28f050c0-fa20-4690-9886-acbf15baa782_2924_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Bambino Macaroni Pep Wheat Elbow Pasta
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Classic elbow
+                                pasta</p>
+                            <p class="quantity-fontsize">400g<br><span class="money-color-fontsize">₹55</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹60</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/b39fca37-9379-4150-b347-aa330cc12375_V8PHD5IZC3_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Disano Penne Pasta 100% Durum Whea</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">healthy wheat
+                                pasta</p>
+                            <p class="quantity-fontsize"> 500g<br><span class="money-color-fontsize">₹80</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹85</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/1996549e-7bd0-4b5b-9609-0bf94a94f8a1_DHGLDUMC0O_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Bambino Macaroni Elbow</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Smooth elbow
+                                pasta</p>
+                            <p class="quantity-fontsize">105<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹105</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Vermicelli -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="vermicelli">
+                        Vermicelli
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f048691c-d5e6-44da-918d-17fc317c95fe_G4URTZIJOK_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Mtr Roasted Vermicelli</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Perfectly
+                                Roasted Sevai</p>
+                            <p class="quantity-fontsize">850g<br><span class="money-color-fontsize">₹110</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹130</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/10/8/93caf7d7-15ea-4a3d-8063-f16c1cd32495_NPI-037011_1_20250924_105014.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">HAND BRAND Premium Long Cut Roasted
+                                Vermicelli
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Long Cut
+                                Roasted Vermicelli</p>
+                            <p class="quantity-fontsize">450g<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹110</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/98ec488f-d1a9-4be2-8caf-aa71e7c9c298_PVXIO208BA_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Real Thai Rice Vermicelli</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Silky rice
+                                strands</p>
+                            <p class="quantity-fontsize">375g<br><span class="money-color-fontsize">₹250</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹270</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/e1e86f78-39ba-4066-945f-a8d0d1883377_PDTBVR0TYS_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">HAND BRAND Premium Long Cut Plain
+                                Vermicelli</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Long Cut Plain
+                                Vermicelli
+                            </p>
+                            <p class="quantity-fontsize">450g<br><span class="money-color-fontsize">₹105</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹110</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/c31f233b-c829-4eff-a843-b728ccdc6f85_UD6YM97CKY_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">TGF Roasted Vermicelli
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">TGF Roasted
+                                Vermicelli </p>
+                            <p class="quantity-fontsize">400g <br><span class="money-color-fontsize">₹60</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹70</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/fc5686d1-4310-4e22-9f6c-f4576c2b058b_5AX2PBFSIP_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Tata Sampann Roasted Vermicelli</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Roasted
+                                Vermicelli</p>
+                            <p class="quantity-fontsize">850g<br><span class="money-color-fontsize">₹100</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹115</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f29e5fdc-6051-40ae-8a7a-46d314a5b17a_8ZMXUGFFNQ_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">MOMS CHC SHORTCUT ROASTED VERMICELLI
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Roasted
+                                Vermicelli</p>
+                            <p class="quantity-fontsize">450g<br><span class="money-color-fontsize">₹70</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹80</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f546a9ea-8c1e-46af-b59c-c801267b3518_5Y7GX9TJ4W_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Bombino Roasted Vermicelli</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Golden roasted
+                                strands</p>
+                            <p class="quantity-fontsize">500g x 2 <br><span
+                                    class="money-color-fontsize">₹125</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹130</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/50eac685-d9fb-46eb-a94d-3ed00d305e0e_BWXB2P1CRX_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Tata Sampann Unroasted Vermicelli
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Made with Suji,
+                                No Added Maida</p>
+                            <p class="quantity-fontsize">850g<br><span class="money-color-fontsize">₹85</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹100</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- soups -->
+                    <div class="w-100 fw-bold fs-4 ps-5 mt-1" id="soups">
+                        Soups
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/f055a167-ee54-4a9c-ab32-c26c5cc26f00_U66FGG0ZNE_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr Classic Thick Tomato Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Thick tomato
+                                soup ready in minutes
+                            </p>
+                            <p class="quantity-fontsize">51g<br><span class="money-color-fontsize">₹45</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹55</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/CIW/2026/1/20/8f503c26-a9a2-4038-8c3b-0e58b34086c6_501340_1.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Yu Creamy Tomato Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Soup with
+                                Macaroni</p>
+                            <p class="quantity-fontsize">50g<br><span class="money-color-fontsize">₹60</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹69</span></p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/a50e13ec-f304-42cb-834e-3a56eff8bfe6_WSSAUL00YA_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr Hot n Sour Veg Cup-a-Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Spicy & tangy
+                                hot and sour instant soup</p>
+                            <p class="quantity-fontsize">12g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/9e340405-b427-4f97-b1f3-fdb662d7aecc_PR62GCFUUO_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr Tomato Chatpata Cup-a-Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Tangy tomato
+                                soup in a quick cup
+                            </p>
+                            <p class="quantity-fontsize">14.5g<br><span class="money-color-fontsize">₹9</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹10</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/58f4004e-9be0-4e78-8a11-252570a00099_KX81CCHWAF_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Simplify Foods Cashew & Moringa Soup
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Cashew &
+                                Moringa Soup</p>
+                            <p class="quantity-fontsize">55g<br><span class="money-color-fontsize">₹145</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹160</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/7c87d932-a0f3-404e-9fe8-34ae6e4e1d94_7GCGF9Y4WH_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr classic Chicken Delite Soup
+                            </h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Creamy and
+                                flavourful chicken soup </p>
+                            <p class="quantity-fontsize"> 42g<br><span class="money-color-fontsize">₹65</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹65</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/714e7492-1a9d-41a7-8e0a-6aef181c41f8_GX4YPYG59K_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr Classic Vegetable Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Classic
+                                vegetable soup with real veggie </p>
+                            <p class="quantity-fontsize">40g<br><span class="money-color-fontsize">₹50</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹55</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-auto p-0 mt-1 card-border-radius ms-md-3" style="width: 13rem;">
+                        <div class="d-flex justify-content-center p-1"><img
+                                src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_544,w_504/NI_CATALOG/IMAGES/ciw/2025/12/18/ec2ec5a2-9880-4538-8a2e-f19010d12014_RVWKCMIBOK_MN_18122025.png"
+                                class="card-img-top wid">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-size d-flex justify-content-center ">Knorr Cream Of Brocolli Soup</h5>
+                            <p class="card-text d-flex justify-content-center description-fontsize my-1">Rich and creamy
+                                soup with real broccoli</p>
+                            <p class="quantity-fontsize">50g<br><span class="money-color-fontsize">₹60</span><span
+                                    class=" ms-3 text-decoration-line-through text-muted money-fontsize">₹65</span>
+                            </p>
+                            <div class="d-flex justify-content-center align-items-center gap-2 qty-box">
+                                <button class="btn btn-outline-primary btn-sm qty-minus">−</button>
+                                <span class="fw-bold qty-value">0</span>
+                                <button class="btn btn-outline-primary btn-sm qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <script src="cart.js"></script>
+
+</body>
+
+</html>

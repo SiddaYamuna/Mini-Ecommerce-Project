@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="bootstrap.css" rel="stylesheet">
+
+  <style>
+    .left-image {
+      background: url("noodles.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+       min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Left Image -->
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-none d-md-block d-lg-block left-image "></div>
+
+      <!-- Right Form -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+        <div class="w-75 text-center">
+
+          <h2>Welcome Back!</h2>
+          <p>Please log in to access your dashboard</p>
+
+          <form action="login.php" method="post" class="text-start">
+
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" placeholder="Enter your Username">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Enter your password">
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3">
+              Log in
+            </button>
+
+            <div class="text-center">
+              Don’t have an account?
+              <a href="signup.html">Sign up</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

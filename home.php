@@ -145,7 +145,7 @@ if (!isset($_SESSION['username'])) {
       <div class="col-3 col-sm-3 col-md-auto mb-3 mb-sm-0">
         <a href="FreshVegetables.html" class="text-decoration-none text-dark">
           <div class="card-auto">
-            <img src="veg.png" class="card-img-top wid" alt="...">
+            <img src="vegetables.png" class="card-img-top wid" alt="...">
             <div class="card-body ">
               <h5 class="card-title mt-2 ps-1 fontsize">Fresh <br>
                 Vegetables</h5>
